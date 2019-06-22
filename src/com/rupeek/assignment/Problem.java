@@ -1,12 +1,17 @@
 package com.rupeek.assignment;
 
+import java.util.Scanner;
+
 public class Problem {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
 		Solution sol = new Solution();
-		sol.findPairs(1002);
-//		boolean val = sol.validateB(512, 28121);
-//		System.out.println(val);
+
+		System.out.print("Enter number: ");
+        int number = input.nextInt();
+        
+		sol.findPairs(number);
 	}
 
 }

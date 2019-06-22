@@ -18,18 +18,11 @@ public class Solution {
 		
 	
 	public boolean validateB(int B, int num) {
-//		int k;
-//	    int tmp = 0;
-//	    int i = 0;
-//        System.out.println("N:: "+num);
-//        System.out.println("B:: "+B);
-//        System.out.println("---------------");
 	    
 		if (countDigit(B) == 1 && B > 0) {
 			int k;
 			int leadingZeros = countDigit(num)-1;				
 			String formatted = String.format("%0"+leadingZeros+"d", B);
-
 			for (int j=0; j<formatted.length(); j++) {
 				int temp = Integer.parseInt(formatted.charAt(j)+"");
 		        int N = num;
@@ -47,38 +40,28 @@ public class Solution {
 				}				
 			}
 	    } else {
-
-	    	int tmp = 0;
-		
+	    	int tmp = 0;		
 	        while(B > 0) {
-	    		int k;
-	
+	    		int k;	
 	        	if (tmp == (B % 10)) {
 	        		return false;
 	        	}
 		        tmp = B % 10;
-	//	        System.out.println("right most of B:: "+tmp);
 		        int N = num;
 				while(N > 0) {
 				  k=N%10;
-	//		        System.out.println("right most of N:: "+k);
 				  if(k==tmp) {
 					  break;
 				  }
 				  N /= 10;
-	//			  System.out.println("N:: "+ N);
 	
 				  if (k != B && N == 0) {
 					  return false;
 				  }
 				}
 		        B /= 10;	        
-	//	        System.out.println("B:: "+ B);
-		    }
-	        
-	        
+		    }	        	        
 	    }
-	        
 		return true;
 	}
 
